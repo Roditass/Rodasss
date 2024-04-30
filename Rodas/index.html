@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Cards</title>
+  <!-- Agrega los estilos de Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container bg-dark">
+    <h1>Los verdaderos</h1>
+  <div class="row" id="userCardsContainer">
+   
+    <!-- Los cards se agregarán aquí dinámicamente -->
+  </div>
+</div>
+
+<script>
+  const users = [
+    {
+      name: 'BadBu',
+      avatar: 'img/1945.jpg',
+    },
+    {
+      name: 'Lebron',
+      avatar: 'img/2324_PlayerImage_James_1920x2304.jpg',
+    },
+    {
+      name: 'Connor Macgregor',
+      avatar: 'img/17130758517250.jpg',
+    },
+    {
+      name: 'messi',
+      avatar: 'img/messi-1805.jpg',
+    },
+    {
+      name: 'neymar',
+      avatar: 'img/neymar-brazil-2023-1694521247-116480.jpg',
+    },
+    {
+      name: 'Curry',
+      avatar: 'img/Stephen Curry Golden State Warriors_1.jpg',
+    },
+    {
+      name: 'Lanita',
+      avatar: 'img/lanita.jpg',
+    },
+    {
+      name: 'El rayo',
+      avatar: 'img/coches.com_quien-es-rayo-mcqueen-cars-9.jpeg',
+    },
+    {
+      name: 'Rauw',
+      avatar: 'img/rauw-alejandro_98.webp',
+    },
+    {
+      name: 'Sergio Ramos',
+      avatar: 'img/futbol-la_liga-champions_league_533458824_164333959_1706x960.webp',
+    },
+  ];
+
+  // Obtener el contenedor donde se mostrarán los cards
+  const userCardsContainer = document.getElementById('userCardsContainer');
+
+  // Iterar sobre el array de usuarios
+  users.forEach(user => {
+    // Crear un elemento div para el card de Bootstrap
+    const card = document.createElement('div');
+    card.classList.add('col-md-3', 'mb-4');
+
+    // Configurar el contenido del card
+    card.innerHTML = `
+      <div class="card">
+        <img src="${user.avatar}" class="" alt="${user.name}" width="100">
+        <div class="card-body">
+          <h5 class="card-title">${user.name}</h5>
+        </div>
+      </div>
+    `;
+
+    // Agregar el card al contenedor
+    userCardsContainer.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
